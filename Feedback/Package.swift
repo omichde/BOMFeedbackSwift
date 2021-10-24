@@ -3,20 +3,20 @@
 import PackageDescription
 
 let package = Package(
-	name: "BOMFeedback",
+	name: "Feedback",
 	defaultLocalization: "en",
 	platforms: [
 		.iOS(.v12)
 	],
 	products: [
 		.library(
-			name: "BOMFeedback",
-			targets: ["BOMFeedback"]),
+			name: "Feedback",
+			targets: ["Feedback"]),
 	],
 	dependencies: [
 	],
 	targets: [
-		.target(name: "BOMFeedback",
+		.target(name: "Feedback",
 						resources: [
 							.copy("Resources/Feedback-Regular.otf"),
 							.copy("Resources/FeedbackStar.sks")

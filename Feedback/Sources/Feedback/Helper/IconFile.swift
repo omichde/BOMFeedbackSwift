@@ -8,38 +8,38 @@
 import UIKit
 
 enum IconFont: String {
-	case pen = "\uf000"
-	case search = "\uf001"
-	case plus = "\uf002"
-	case minus = "\uf003"
-	case cross = "\uf004"
-	case arrowRight = "\uf005"
-	case arrowLeft = "\uf006"
-	case arrowRightGrowing = "\uf007"
-	case heartFilled = "\uf008"
-	case heart = "\uf009"
-	case starFilled = "\uf00b"
-	case star = "\uf00c"
-	case headFilled = "\uf00d"
-	case head = "\uf00e"
-	case mailFilled = "\uf00f"
-	case mail = "\uf010"
-	case factoryFilled = "\uf012"
-	case factory = "\uf013"
-	case modulesFilled = "\uf017"
-	case modules = "\uf018"
-	case bubbleFilled = "\uf019"
-	case bubble = "\uf01a"
-	case clipFilled = "\uf01b"
-	case clip = "\uf01c"
-	case bookFilled = "\uf01d"
-	case book = "\uf01e"
-	case smilyProblem = "\uf00a"
-	case puzzleFilled = "\uf011"
-	case gear = "\uf01f"
-	case twitter = "\uf014"
-	case facebook = "\uf015"
-	case share = "\uf016"
+	case pen = "\u{f000}"
+	case search = "\u{f001}"
+	case plus = "\u{f002}"
+	case minus = "\u{f003}"
+	case cross = "\u{f004}"
+	case arrowRight = "\u{f005}"
+	case arrowLeft = "\u{f006}"
+	case arrowRightGrowing = "\u{f007}"
+	case heartFilled = "\u{f008}"
+	case heart = "\u{f009}"
+	case starFilled = "\u{f00b}"
+	case star = "\u{f00c}"
+	case headFilled = "\u{f00d}"
+	case head = "\u{f00e}"
+	case mailFilled = "\u{f00f}"
+	case mail = "\u{f010}"
+	case factoryFilled = "\u{f012}"
+	case factory = "\u{f013}"
+	case modulesFilled = "\u{f017}"
+	case modules = "\u{f018}"
+	case bubbleFilled = "\u{f019}"
+	case bubble = "\u{f01a}"
+	case clipFilled = "\u{f01b}"
+	case clip = "\u{f01c}"
+	case bookFilled = "\u{f01d}"
+	case book = "\u{f01e}"
+	case smilyProblem = "\u{f00a}"
+	case puzzleFilled = "\u{f011}"
+	case gear = "\u{f01f}"
+	case twitter = "\u{f014}"
+	case facebook = "\u{f015}"
+	case share = "\u{f016}"
 
 	static let barButtonIconFontSize: CGFloat = 22
 	static let feedbackDefaultFontSize: CGFloat = 15
@@ -51,8 +51,7 @@ extension UIFont {
 			return font
 		}
 		if let fontURL = Bundle.main.url(forResource: "Feedback-Regular", withExtension: "otf") {
-			var error: CFError
-			CTFontManagerRegisterFontsForURL(CFURL(fontURL), CTFontManagerScope.process, &error)
+			CTFontManagerRegisterFontsForURL(fontURL as CFURL, CTFontManagerScope.process, nil)
 		}
 		return UIFont(name: "Feedback", size: size)
 	}
@@ -63,37 +62,37 @@ extension UIFont {
 }
 
 extension UIButton {
-	static func icon(token: IconFont) -> UIButton {
-		return [self iconButton:token target:nil action:nil];
+	static func iconButton(token: IconFont) -> UIButton {
+		iconButton(token: token, target: nil, action: nil)
 	}
 
-	static func iconButton(token: IconFont, target:Any, action:Selector) -> UIButton {
+	static func iconButton(token: IconFont, target:Any?, action:Selector?) -> UIButton {
 		iconButton(token: token, fontSize: IconFont.feedbackDefaultFontSize, target: target, action: action)
 	}
 
-	static func iconButton(token: IconFont, fontSize:CGFloat, target:Any, action:Selector) -> UIButton {
+	static func iconButton(token: IconFont, fontSize:CGFloat, target:Any?, action:Selector?) -> UIButton {
 		let button = UIButton(type: .system)
 		button.setIcon(token: token, fontSize: fontSize)
-		
-		if target && action {
+
+		if let action = action {
 			button.addTarget(target, action: action, for: .touchUpInside)
 		}
-		return button;
+		return button
 	}
 
 	func setIcon(token: IconFont) {
 		var font: UIFont?
-		let range = NSMakeRange(0, 1)
+		var range = NSMakeRange(0, 1)
 		if let title = currentAttributedTitle {
 			let attributes = title.attributes(at: 0, effectiveRange: &range)
-			font = attributes[NSFontAttributeName]
+			font = attributes[NSAttributedString.Key.font] as? UIFont
 		}
-		setIcon(token: token, fontSize: (font ? font?.pointSize ?? IconFont.feedbackDefaultFontSize))
+		setIcon(token: token, fontSize: (font?.pointSize ?? IconFont.feedbackDefaultFontSize))
 	}
 
 	func setIcon(token: IconFont, fontSize:CGFloat) {
 		titleLabel?.font = UIFont.iconFont(size: fontSize)
-		setTitle(token, for: .normal)
+		setTitle(token.rawValue, for: .normal)
 		sizeToFit()
 	}
 	
@@ -124,8 +123,8 @@ extension UIBarButtonItem {
 		setIcon(token: token, forState: .normal)
 	}
 	
-	func setIcon(token: IconFont, forState:UIControlState) {
-		guard let button = customView else { return }
+	func setIcon(token: IconFont, forState: UIControl.State) {
+		guard let button = customView as? UIButton else { return }
 		button.setIcon(token: token, fontSize: IconFont.feedbackDefaultFontSize)
 	}
 
@@ -142,20 +141,20 @@ extension UIBarButtonItem {
 
 extension UIImage {
 	
-	static func iconTabBarImage(token: IconFont) -> UIImage {
+	static func iconTabBarImage(token: IconFont) -> UIImage? {
 		iconImage(token: token, fontSize: 27, fontColor: .gray, boxSize: CGSize(width: 30, height: 30))
 	}
 
-	static func iconImage(token: IconFont, fontSize:CGFloat, fontColor:UIColor, boxSize:CGSize) -> UIImage {
+	static func iconImage(token: IconFont, fontSize:CGFloat, fontColor:UIColor, boxSize:CGSize) -> UIImage? {
 		let attributedToken = NSAttributedString(string: token.rawValue,
-																						 attributes: [NSAttributedString.Key.font: UIFont.iconFont(size: fontSize),
+																						 attributes: [NSAttributedString.Key.font: UIFont.iconFont(size: fontSize)!,
 																													NSAttributedString.Key.foregroundColor: fontColor])
-		let size = attributedToken.size
+		let size = attributedToken.size()
 		UIGraphicsBeginImageContextWithOptions(boxSize, false, 0)
-		let tokenRect = CGRect((boxSize.width - size.width)/2,
-													 (boxSize.height - size.height)/2,
-													 size.width,
-													 size.height)
+		let tokenRect = CGRect(x: (boxSize.width - size.width)/2,
+													 y: (boxSize.height - size.height)/2,
+													 width: size.width,
+													 height: size.height)
 		attributedToken.draw(in: tokenRect)
 		let result = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
