@@ -14,11 +14,30 @@ class LikeViewController: UIViewController, UINavigationControllerDelegate {
 	var feedbackConfig: FeedbackConfig?
 	var moduleConfig: FeedbackConfig.ContactModule?
 
+	@IBOutlet weak var rateButton: UIButton!
+	@IBOutlet weak var emailButton: UIButton!
+	@IBOutlet weak var twitterButton: UIButton!
+	@IBOutlet weak var facebookButton: UIButton!
 	@IBOutlet weak var thanksView: SKView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+
+		if let services = moduleConfig?.services {
+			let pairs: [(FeedbackConfig.ContactModule.ContactType, UIButton)] =
+			[(.store, rateButton),
+			 (.email, emailButton),
+			 (.twitter, twitterButton),
+			 (.facebook, facebookButton)]
+			
+			pairs.forEach() { (contact, button) in
+				button.isHidden = !services.contains(contact)
+			}
+		}
+		else {
+			[rateButton, emailButton, twitterButton, facebookButton].forEach() { $0?.isHidden = true }
+		}
+
 		// just for the fun of it...
 		let modulePath = Bundle.module.bundleURL.lastPathComponent
 		if let starNode = SKEmitterNode(fileNamed: "\(modulePath)/FeedbackStar"), let star = UIImage(systemName: "star.fill") {
@@ -36,7 +55,9 @@ class LikeViewController: UIViewController, UINavigationControllerDelegate {
 			thanksView.isHidden = true
 		}
 	}
+}
 
+extension LikeViewController {
 	@IBAction func rate() {
 		SKStoreReviewController.requestReview()
 	}

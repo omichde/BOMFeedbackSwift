@@ -8,8 +8,8 @@
 import UIKit
 
 class ContactViewController: UIViewController {
-	var feedbackConfig: FeedbackConfig?
 	var moduleConfig: FeedbackConfig.ContactModule?
+	var feedbackConfig: FeedbackConfig?
 
 	@IBOutlet weak var likeButton: UIButton!
 	@IBOutlet weak var dislikeButton: UIButton!
@@ -19,8 +19,14 @@ class ContactViewController: UIViewController {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 
-		title = "Contact".localized
 		tabBarItem = UITabBarItem(title: "Contact".localized, image: UIImage(systemName: "bubble.left"), selectedImage: UIImage(systemName: "bubble.left.fill"))
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let likeViewController = segue.destination as? LikeViewController {
+			likeViewController.moduleConfig = moduleConfig
+			likeViewController.feedbackConfig = feedbackConfig
+		}
 	}
 }
 
