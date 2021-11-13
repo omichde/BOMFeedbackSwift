@@ -27,6 +27,10 @@ class ContactViewController: UIViewController {
 			likeViewController.moduleConfig = moduleConfig
 			likeViewController.feedbackConfig = feedbackConfig
 		}
+		if let dislikeViewController = segue.destination as? DislikeViewController {
+			dislikeViewController.moduleConfig = moduleConfig
+			dislikeViewController.feedbackConfig = feedbackConfig
+		}
 	}
 }
 

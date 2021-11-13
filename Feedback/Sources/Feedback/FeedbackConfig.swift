@@ -24,37 +24,10 @@ public struct FeedbackConfig: Decodable {
 			self.submodule = submodule
 		}
 	}
-	
-//	public struct AppModule: Decodable {
-////		let name = "apps"
-//		let url: String				// url to show your app
-//
-//		public init(url: String) {
-//			self.url = url
-//		}
-//	}
-//
-//	public struct AboutModule: Decodable {
-////		let name = "about"
-//		let file: String			// local file name with about info
-//
-//		public init(file: String) {
-//			self.file = file
-//		}
-//	}
-//
-//	public struct ModulesModul: Decodable {
-////		let name = "modules"
-//		let files: [String]
-//
-//		public init(files: [String]) {
-//			self.files = files
-//		}
-//	}
 
 	public enum Module: Decodable {
 		case contact(ContactModule)
-		case apps(String)						/// URL of all apps
+		case apps(String)						/// web URL of all apps
 		case about(String)					/// name of about.html file
 		case modules([String])			/// name of all readme files (rtf, html, pdf)
 	}

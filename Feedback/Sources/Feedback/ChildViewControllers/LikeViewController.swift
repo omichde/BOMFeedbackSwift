@@ -10,7 +10,7 @@ import StoreKit
 import MessageUI
 import SpriteKit
 
-class LikeViewController: UIViewController, UINavigationControllerDelegate {
+class LikeViewController: UIViewController {
 	var feedbackConfig: FeedbackConfig?
 	var moduleConfig: FeedbackConfig.ContactModule?
 
@@ -62,16 +62,6 @@ extension LikeViewController {
 		SKStoreReviewController.requestReview()
 	}
 
-	@IBAction func email() {
-		if MFMailComposeViewController.canSendMail() {
-			let emailer = MFMailComposeViewController()
-			emailer.delegate = self
-			emailer.setSubject("Email-Subject".localized)
-			emailer.setMessageBody("Email-Text".localized, isHTML: false)
-			present(emailer, animated: true)
-		}
-	}
-
 	@IBAction func twitter() {
 		let message = "Twitter-Text".localized.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
 
@@ -108,7 +98,17 @@ extension LikeViewController: ModuleNaming {
 	static var identifier: String { String(describing: self) }
 }
 
-extension LikeViewController: MFMailComposeViewControllerDelegate {
+extension LikeViewController: MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
+	@IBAction func email() {
+		guard MFMailComposeViewController.canSendMail() else { return }
+
+		let emailer = MFMailComposeViewController()
+		emailer.delegate = self
+		emailer.setSubject("Email-Subject".localized)
+		emailer.setMessageBody("Email-Text".localized, isHTML: false)
+		present(emailer, animated: true)
+	}
+
 	func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
 		controller.dismiss(animated: true)
 	}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE2FC81E27405EC20046D3AE /* FeedbackFAQ.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */; };
 		DE6D7F062725F8CA00A8F382 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D7F052725F8CA00A8F382 /* AppDelegate.swift */; };
 		DE6D7F082725F8CA00A8F382 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D7F072725F8CA00A8F382 /* SceneDelegate.swift */; };
 		DE6D7F0A2725F8CA00A8F382 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D7F092725F8CA00A8F382 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeedbackFAQ.plist; sourceTree = "<group>"; };
 		DE6D7F022725F8CA00A8F382 /* NiceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6D7F052725F8CA00A8F382 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE6D7F072725F8CA00A8F382 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				DE6D7F072725F8CA00A8F382 /* SceneDelegate.swift */,
 				DE6D7F092725F8CA00A8F382 /* ViewController.swift */,
 				DE6D7F0B2725F8CA00A8F382 /* Main.storyboard */,
+				DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */,
 				DE6D7F0E2725F8CE00A8F382 /* Assets.xcassets */,
 				DE6D7F102725F8CE00A8F382 /* LaunchScreen.storyboard */,
 				DE6D7F132725F8CE00A8F382 /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2FC81E27405EC20046D3AE /* FeedbackFAQ.plist in Resources */,
 				DE6D7F122725F8CE00A8F382 /* LaunchScreen.storyboard in Resources */,
 				DE6D7F0F2725F8CE00A8F382 /* Assets.xcassets in Resources */,
 				DE6D7F0D2725F8CA00A8F382 /* Main.storyboard in Resources */,
