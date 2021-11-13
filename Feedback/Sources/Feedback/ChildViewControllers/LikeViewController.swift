@@ -20,9 +20,9 @@ class LikeViewController: UIViewController, UINavigationControllerDelegate {
 		super.viewDidLoad()
 		
 		// just for the fun of it...
-		if let starNode = SKEmitterNode(fileNamed: "FeedbackStar") {
-			starNode.particleTexture = SKTexture(image: UIImage(systemName: "star.fill")!)
-//			starNode.particleTexture = [SKTexture textureWithImage:[UIImage feedbackIconImage:IFStarFilled fontSize:50 fontColor:[UIColor whiteColor] forSize:CGSizeMake(50, 50)]];
+		let modulePath = Bundle.module.bundleURL.lastPathComponent
+		if let starNode = SKEmitterNode(fileNamed: "\(modulePath)/FeedbackStar"), let star = UIImage(systemName: "star.fill") {
+			starNode.particleTexture = SKTexture(image: star)
 			starNode.position = CGPoint(x: thanksView.bounds.midX, y: thanksView.bounds.maxY * 0.3)
 			starNode.particlePositionRange = CGVector(dx: thanksView.bounds.width * 0.6, dy: 10)
 			let scene = SKScene(size: thanksView.bounds.size)
