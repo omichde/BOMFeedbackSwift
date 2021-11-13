@@ -9,10 +9,13 @@ import Foundation
 
 protocol ModuleNaming {
 	var name: ModuleName { get }
+	static var identifier: String { get }
 }
 
 public enum ModuleName: String, CaseIterable {
 	case contact
+	case like
+	case dislike
 	case apps
 	case about
 	case modules

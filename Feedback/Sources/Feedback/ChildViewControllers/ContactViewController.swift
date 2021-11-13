@@ -10,17 +10,21 @@ import UIKit
 class ContactViewController: UIViewController {
 	var feedbackConfig: FeedbackConfig?
 	var moduleConfig: FeedbackConfig.ContactModule?
+
+	@IBOutlet weak var likeButton: UIButton!
+	@IBOutlet weak var dislikeButton: UIButton!
 	
+	@IBOutlet weak var containerView: UIView!
+
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
-		
-//		self.tabBarItem = [[UITabBarItem alloc] initWithTitle:FeedbackLocalizedString(@"Contact") image:[[UIImage feedbackIconTabBarImage:IFBubble] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImage feedbackIconTabBarImage:IFBubbleFilled]];
+
+		title = "Contact".localized
+		tabBarItem = UITabBarItem(title: "Contact".localized, image: UIImage(systemName: "bubble.left"), selectedImage: UIImage(systemName: "bubble.left.fill"))
 	}
-	
 }
 
 extension ContactViewController: ModuleNaming {
-	var name: ModuleName {
-		.contact
-	}
+	var name: ModuleName { .contact }
+	static var identifier: String { String(describing: self) }
 }

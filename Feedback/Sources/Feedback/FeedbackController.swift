@@ -7,13 +7,15 @@
 
 import UIKit
 
-class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITabBarControllerDelegate {
+public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITabBarControllerDelegate {
 
 	let config: FeedbackConfig
 
+	required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
 	public init(_ config: FeedbackConfig) {
 		self.config = config
-		super.init()
+		super.init(nibName: "Feedback", bundle: Bundle.module)
 		setup()
 	}
 
@@ -35,16 +37,17 @@ class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITabBarCon
 	}
 	
 	func setup() {
-		let storyboard = UIStoryboard(name: "Feedback", bundle: nil)
-		var viewControllers = [UIViewController]()
+		var list = [UIViewController]()
 		for module in config.modules {
 			var viewController: UIViewController?
+			let storyboard = UIStoryboard(name: "Feedback", bundle: Bundle.module)
 			switch module {
 			case let .contact(contact):
-				let contactViewController = storyboard.instantiateViewController(withIdentifier: "ContactViewController") as! ContactViewController
-				contactViewController.moduleConfig = contact
-				contactViewController.feedbackConfig = config
-				viewController = contactViewController
+				if let vc = storyboard.instantiateViewController(withIdentifier: ContactViewController.identifier) as? ContactViewController {
+					vc.moduleConfig = contact
+					vc.feedbackConfig = config
+					viewController = vc
+				}
 			case let .apps(app):
 				()
 			case let .about(about):
@@ -52,6 +55,7 @@ class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITabBarCon
 			case let .modules(modules):
 				()
 			}
+
 			guard let viewController = viewController else { continue }
 			let navController = UINavigationController(rootViewController: viewController)
 			if let navColor = config.navigationBarColor {
@@ -65,18 +69,16 @@ class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITabBarCon
 			else {
 				navController.view.backgroundColor = .white
 			}
-			viewControllers.append(navController)
+			viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(close))
+			list.append(navController)
 		}
-		self.viewControllers = viewControllers
+		self.viewControllers = list
 		self.selectedIndex = 0
-	}
-
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		self.modalPresentationStyle = .automatic
 	}
 	
 	///	Dismisses the Feedback Controller altogether
-	public func dismiss() {
+	@objc func close() {
 		dismiss(animated: true, completion: nil)
 	}
 

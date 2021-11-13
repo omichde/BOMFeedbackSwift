@@ -7,43 +7,69 @@
 
 import Foundation
 
-struct FeedbackConfig: Decodable {
-	struct ContactModule: Decodable {
-		enum ContactType: Decodable {
+public struct FeedbackConfig: Decodable {
+	public struct ContactModule: Decodable {
+		public enum ContactType: Decodable {
 			case store, email, twitter, facebook
 		}
-		let name = "contact"
-		let submodule: String	// class of child viewcontroller
-		let email: String
-		let services: [ContactType]
-		let faqFile: String		// local faq file name
+		let email: String						/// email
+		let services: [ContactType]	/// list of contact services
+		let faqFile: String					/// local faq file name
+		let submodule: String?			/// class of child viewcontroller
+
+		public init(email: String, services: [ContactType], faqFile: String, submodule: String? = nil) {
+			self.email = email
+			self.services = services
+			self.faqFile = faqFile
+			self.submodule = submodule
+		}
 	}
 	
-	struct AppModule: Decodable {
-		let name = "apps"
-		let url: String				// url to show your app
-	}
+//	public struct AppModule: Decodable {
+////		let name = "apps"
+//		let url: String				// url to show your app
+//
+//		public init(url: String) {
+//			self.url = url
+//		}
+//	}
+//
+//	public struct AboutModule: Decodable {
+////		let name = "about"
+//		let file: String			// local file name with about info
+//
+//		public init(file: String) {
+//			self.file = file
+//		}
+//	}
+//
+//	public struct ModulesModul: Decodable {
+////		let name = "modules"
+//		let files: [String]
+//
+//		public init(files: [String]) {
+//			self.files = files
+//		}
+//	}
 
-	struct AboutModule: Decodable {
-		let name = "about"
-		let file: String			// local file name with about info
-	}
-	
-	struct ModulesModul: Decodable {
-		let name = "modules"
-		let files: [String]
-	}
-
-	enum Module: Decodable {
+	public enum Module: Decodable {
 		case contact(ContactModule)
-		case apps(AppModule)
-		case about(AboutModule)
-		case modules(ModulesModul)
+		case apps(String)						/// URL of all apps
+		case about(String)					/// name of about.html file
+		case modules([String])			/// name of all readme files (rtf, html, pdf)
 	}
 
-	let APPId: String
-	let ITMSURL: String
-	let WebURL: String
-	let navigationBarColor: String?
-	let modules: [Module]
+	public let APPId: String
+	public let ITMSURL: String
+	public let webURL: String
+	public let navigationBarColor: String?
+	public let modules: [Module]
+
+	public init (APPId: String, ITMSURL: String, webURL: String, navigationBarColor: String? = nil, modules: [Module] = []) {
+		self.APPId = APPId
+		self.ITMSURL = ITMSURL
+		self.webURL = webURL
+		self.navigationBarColor = navigationBarColor
+		self.modules = modules
+	}
 }
