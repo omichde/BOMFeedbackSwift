@@ -17,7 +17,7 @@ extension UIColor {
 
 			let scanner = Scanner(string: code)
 			var hexNumber: UInt64 = 0
-			
+
 			if scanner.scanHexInt64(&hexNumber) {
 				let r = CGFloat((hexNumber & 0xff0000) >> 16) / 255
 				let g = CGFloat((hexNumber & 0x00ff00) >> 8) / 255
@@ -32,8 +32,7 @@ extension UIColor {
 			var vals = [CGFloat]()
 			for val in list {
 				let scanner = Scanner(string: val)
-				var number: Float = 0
-				if scanner.scanFloat(&number) {
+				if let number = scanner.scanFloat() {
 					vals.append(CGFloat(number))
 				}
 				guard vals.count == 3 else { return nil }
