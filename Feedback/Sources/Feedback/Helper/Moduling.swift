@@ -19,4 +19,5 @@ public enum ModuleName: String, CaseIterable {
 	case apps
 	case about
 	case modules
+	case module
 }

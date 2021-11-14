@@ -61,7 +61,11 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 					viewController = vc
 				}
 			case let .modules(modules):
-				()
+				if let vc = storyboard.instantiateViewController(withIdentifier: ModulesViewController.identifier) as? ModulesViewController {
+					vc.modules = modules
+					vc.feedbackConfig = config
+					viewController = vc
+				}
 			}
 
 			guard let viewController = viewController else { continue }

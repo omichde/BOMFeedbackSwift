@@ -282,26 +282,25 @@
             </objects>
             <point key="canvasLocation" x="-499" y="3516"/>
         </scene>
-        <!--Modules Feedback View Controller-->
+        <!--Modules View Controller-->
         <scene sceneID="P18-td-GdM">
             <objects>
-                <viewController storyboardIdentifier="ModulesFeedbackViewController" automaticallyAdjustsScrollViewInsets="NO" id="8sE-Pq-jxb" customClass="ModulesFeedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModulesViewController" automaticallyAdjustsScrollViewInsets="NO" id="8sE-Pq-jxb" customClass="ModulesViewController" customModule="Feedback" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Dgw-Sw-dIM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Thank you dear developers for your libraries used in this APP:" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ySq-qT-olx">
-                                <rect key="frame" x="20" y="20" width="374" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="20" y="64" width="374" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-PY-Mb8">
-                                <rect key="frame" x="0.0" y="63.5" width="414" height="749.5"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="703"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.85262835025787354" green="0.85262835025787354" blue="0.85262835025787354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="8sE-Pq-jxb" id="6zr-M3-vtR"/>
                                     <outlet property="delegate" destination="8sE-Pq-jxb" id="Auv-tS-Fht"/>
                                 </connections>
                             </tableView>
@@ -311,24 +310,27 @@
                         <constraints>
                             <constraint firstItem="ekq-PY-Mb8" firstAttribute="leading" secondItem="8u8-6d-M1h" secondAttribute="leading" id="7mu-tq-6b5"/>
                             <constraint firstItem="ekq-PY-Mb8" firstAttribute="top" secondItem="ySq-qT-olx" secondAttribute="bottom" constant="10" id="ENC-de-2QY"/>
-                            <constraint firstItem="ySq-qT-olx" firstAttribute="top" secondItem="Dgw-Sw-dIM" secondAttribute="top" constant="20" id="Kc3-Xc-8kS"/>
+                            <constraint firstItem="ySq-qT-olx" firstAttribute="top" secondItem="8u8-6d-M1h" secondAttribute="top" constant="20" id="Kc3-Xc-8kS"/>
                             <constraint firstItem="8u8-6d-M1h" firstAttribute="trailing" secondItem="ekq-PY-Mb8" secondAttribute="trailing" id="P7N-xi-9vi"/>
-                            <constraint firstAttribute="bottom" secondItem="ekq-PY-Mb8" secondAttribute="bottom" id="eua-IB-fmo"/>
+                            <constraint firstItem="8u8-6d-M1h" firstAttribute="bottom" secondItem="ekq-PY-Mb8" secondAttribute="bottom" id="eua-IB-fmo"/>
                             <constraint firstItem="ySq-qT-olx" firstAttribute="leading" secondItem="8u8-6d-M1h" secondAttribute="leading" constant="20" id="me9-RY-5pP"/>
                             <constraint firstItem="8u8-6d-M1h" firstAttribute="trailing" secondItem="ySq-qT-olx" secondAttribute="trailing" constant="20" id="pxL-tw-tL6"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="ekq-PY-Mb8" id="tIM-rl-DOH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfx-Mv-q7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-499" y="4287"/>
         </scene>
-        <!--Modul Feedback View Controller-->
+        <!--Modul View Controller-->
         <scene sceneID="cE6-Sg-9NM">
             <objects>
-                <viewController storyboardIdentifier="ModulFeedbackViewController" automaticallyAdjustsScrollViewInsets="NO" id="jzs-IG-Ifn" customClass="ModulFeedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModulViewController" automaticallyAdjustsScrollViewInsets="NO" id="jzs-IG-Ifn" customClass="ModulViewController" customModule="Feedback" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="y9q-nI-dSQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
