@@ -246,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="-499" y="2773"/>
         </scene>
-        <!--About Feedback View Controller-->
+        <!--About View Controller-->
         <scene sceneID="gIh-Te-KSy">
             <objects>
-                <viewController storyboardIdentifier="AboutFeedbackViewController" automaticallyAdjustsScrollViewInsets="NO" id="qOb-bE-B84" customClass="AboutFeedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="qOb-bE-B84" customClass="AboutViewController" customModule="Feedback" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="LJf-xf-ch5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
