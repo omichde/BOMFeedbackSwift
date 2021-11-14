@@ -25,6 +25,9 @@ extension UIColor {
 				
 				self.init(red: r, green: g, blue: b, alpha: 1)
 			}
+			else {
+				return nil
+			}
 		}
 		else {
 			let list = code.components(separatedBy: ",")
@@ -35,10 +38,9 @@ extension UIColor {
 				if let number = scanner.scanFloat() {
 					vals.append(CGFloat(number))
 				}
-				guard vals.count == 3 else { return nil }
-				self.init(red: vals[0], green: vals[1], blue: vals[2], alpha: 1)
 			}
+			guard vals.count == 3 else { return nil }
+			self.init(red: vals[0], green: vals[1], blue: vals[2], alpha: 1)
 		}
-		return nil
 	}
 }

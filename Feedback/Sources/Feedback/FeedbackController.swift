@@ -81,15 +81,8 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 			guard let viewController = viewController else { continue }
 			let navController = UINavigationController(rootViewController: viewController)
 			if let navColor = config.navigationBarColor {
-				navController.navigationBar.tintColor = UIColor(navColor)
+				navController.navigationBar.barTintColor = UIColor(navColor)
 				navController.navigationBar.isTranslucent = false
-			}
-			if view.isDarkMode {
-				navController.navigationBar.barStyle = .black
-				navController.view.backgroundColor = .black
-			}
-			else {
-				navController.view.backgroundColor = .white
 			}
 			viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(close))
 			list.append(navController)
@@ -111,8 +104,8 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 					let idx = list.firstIndex(where: { vc in
 			guard let navVC = vc as? UINavigationController,
 						let contentVC = navVC.viewControllers.first,
-						let contentVC = contentVC as? ModuleNaming else { return false }
-			return contentVC.name == name
+						let moduleVC = contentVC as? ModuleNaming else { return false }
+			return moduleVC.name == name
 		})
 		else { return }
 		
