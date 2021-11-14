@@ -10,8 +10,9 @@ import StoreKit
 import MessageUI
 import SpriteKit
 
-class LikeViewController: UIViewController {
-	var feedbackConfig: FeedbackConfig?
+class LikeViewController: UIViewController, ModuleNaming {
+	static var identifier: String { String(describing: self) }
+	var name: ModuleName!
 	var moduleConfig: FeedbackConfig.ContactModule?
 
 	@IBOutlet weak var rateButton: UIButton!
@@ -19,6 +20,12 @@ class LikeViewController: UIViewController {
 	@IBOutlet weak var twitterButton: UIButton!
 	@IBOutlet weak var facebookButton: UIButton!
 	@IBOutlet weak var thanksView: SKView!
+
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+
+		name = .like
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -91,11 +98,6 @@ extension LikeViewController {
 			UIApplication.shared.open(url, options: [:])
 		}
 	}
-}
-
-extension LikeViewController: ModuleNaming {
-	var name: ModuleName { .like }
-	static var identifier: String { String(describing: self) }
 }
 
 extension LikeViewController: MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {

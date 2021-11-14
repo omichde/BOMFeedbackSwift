@@ -26,22 +26,20 @@ public struct FeedbackConfig: Decodable {
 	}
 
 	public enum Module: Decodable {
-		case contact(ContactModule)
-		case apps(String)						/// web URL of all apps
-		case about(String)					/// name of about.html file
-		case modules([String])			/// name of all readme files (rtf, html, pdf)
+		case contact(ContactModule)	/// contact tab
+		case apps(String)						/// apps tab, web URL of all apps
+		case about(String)					/// about tab, name of about file
+		case modules([String])			/// modules tabs, name of all readme files (rtf, html, pdf)
 	}
 
-	public let APPId: String
-	public let ITMSURL: String
-	public let webURL: String
-	public let navigationBarColor: String?
-	public let modules: [Module]
+	public let APPId: String			/// app store id
+	public let ITMSURL: String		/// app store url string
+	public let navigationBarColor: String?	/// hex code for navigation bar color
+	public let modules: [Module]	/// list of tabs/modules
 
-	public init (APPId: String, ITMSURL: String, webURL: String, navigationBarColor: String? = nil, modules: [Module] = []) {
+	public init (APPId: String, ITMSURL: String, navigationBarColor: String? = nil, modules: [Module] = []) {
 		self.APPId = APPId
 		self.ITMSURL = ITMSURL
-		self.webURL = webURL
 		self.navigationBarColor = navigationBarColor
 		self.modules = modules
 	}

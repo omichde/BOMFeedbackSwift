@@ -8,8 +8,8 @@
 import Foundation
 
 protocol ModuleNaming {
-	var name: ModuleName { get }
 	static var identifier: String { get }
+	var name: ModuleName! { get set }
 }
 
 public enum ModuleName: String, CaseIterable {
@@ -19,5 +19,5 @@ public enum ModuleName: String, CaseIterable {
 	case apps
 	case about
 	case modules
-	case module
+	case web
 }

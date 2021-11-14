@@ -48,16 +48,26 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 					vc.feedbackConfig = config
 					viewController = vc
 				}
-			case let .apps(url):
-				if let vc = storyboard.instantiateViewController(withIdentifier: AppsViewController.identifier) as? AppsViewController {
-					vc.urlString = url
-					vc.feedbackConfig = config
-					viewController = vc
+			case let .apps(urlString):
+				if let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
+					vc.title = "APPs".localized
+					vc.tabBarItem = UITabBarItem(title: "APPs".localized, image: UIImage(systemName: "puzzlepiece"), selectedImage: UIImage(systemName: "puzzlepiece.fill"))
+					if var comp = URLComponents(string: urlString) {
+						comp.queryItems = [URLQueryItem(name: "locale", value: Locale.current.identifier),
+															 URLQueryItem(name: "src", value: Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "")]
+						if let url = comp.url {
+							vc.url = url
+							vc.name = .apps
+							viewController = vc
+						}
+					}
 				}
 			case let .about(about):
-				if let vc = storyboard.instantiateViewController(withIdentifier: AboutViewController.identifier) as? AboutViewController {
-					vc.aboutString = about
-					vc.feedbackConfig = config
+				if let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
+					vc.title = "About".localized
+					vc.tabBarItem = UITabBarItem(title: "About".localized, image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+					vc.url = URL(fileURLWithPath: about, relativeTo: Bundle.main.bundleURL)
+					vc.name = .about
 					viewController = vc
 				}
 			case let .modules(modules):

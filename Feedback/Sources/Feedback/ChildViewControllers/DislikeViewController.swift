@@ -8,13 +8,21 @@
 import UIKit
 import MessageUI
 
-class DislikeViewController: UIViewController {
+class DislikeViewController: UIViewController, ModuleNaming {
+	static var identifier: String { String(describing: self) }
+	var name: ModuleName!
 	var feedbackConfig: FeedbackConfig?
 	var moduleConfig: FeedbackConfig.ContactModule?
 
 	@IBOutlet weak var emailButton: UIButton!
 	@IBOutlet weak var faqTable: UITableView!
 	private var faq: FAQ!
+
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+
+		name = .dislike
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -72,9 +80,4 @@ extension DislikeViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		faq.toggle(indexPath)
 	}
-}
-
-extension DislikeViewController: ModuleNaming {
-	var name: ModuleName { .dislike }
-	static var identifier: String { String(describing: self) }
 }

@@ -17,26 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvK-U4-PEj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvK-U4-PEj">
                                 <rect key="frame" x="-1" y="64" width="416" height="50"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pPW-UB-sjp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="I like this APP"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="I like this APP" image="heart.fill" catalog="system">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="lmy-a5-oJA" kind="show" id="FAu-4Y-7ko"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8i-PX-30h">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8i-PX-30h">
                                 <rect key="frame" x="-1" y="134" width="416" height="50"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="m8G-y8-wDt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="There is a problem..."/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="There is a problem..." image="bubble.left.and.bubble.right.fill" catalog="system">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="gsP-ho-vdp" kind="show" id="YB9-jw-yNr"/>
                                 </connections>
@@ -70,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKu-rJ-0Ds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-499" y="2025"/>
+            <point key="canvasLocation" x="-581" y="1310"/>
         </scene>
         <!--Like View Controller-->
         <scene sceneID="nVX-Z9-2tF">
@@ -112,7 +116,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="e4S-95-0u8"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                                         <state key="normal" title="Rate in APP store" image="star.fill" catalog="system">
                                                             <color key="titleColor" systemColor="tintColor"/>
                                                         </state>
@@ -127,7 +131,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="2GH-lm-6NF"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                                         <state key="normal" title="Recommend via email" image="envelope.fill" catalog="system">
                                                             <color key="titleColor" systemColor="tintColor"/>
                                                         </state>
@@ -208,79 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XT8-NQ-OaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="1277"/>
-        </scene>
-        <!--Apps View Controller-->
-        <scene sceneID="5sb-KO-Oyf">
-            <objects>
-                <viewController storyboardIdentifier="AppsViewController" automaticallyAdjustsScrollViewInsets="NO" id="x6Y-iV-SwL" customClass="AppsViewController" customModule="Feedback" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="NJF-YG-3sk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfX-38-dRq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="jB6-Ua-olO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="FfX-38-dRq" firstAttribute="top" secondItem="NJF-YG-3sk" secondAttribute="top" id="2Hw-KC-7eZ"/>
-                            <constraint firstAttribute="trailing" secondItem="FfX-38-dRq" secondAttribute="trailing" id="Coa-80-6EH"/>
-                            <constraint firstItem="FfX-38-dRq" firstAttribute="leading" secondItem="NJF-YG-3sk" secondAttribute="leading" id="Uct-iO-4rd"/>
-                            <constraint firstAttribute="bottom" secondItem="FfX-38-dRq" secondAttribute="bottom" id="zDE-AN-Fqj"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="webView" destination="FfX-38-dRq" id="I6C-zB-nSv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xb2-tZ-9uC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-499" y="2773"/>
-        </scene>
-        <!--About View Controller-->
-        <scene sceneID="gIh-Te-KSy">
-            <objects>
-                <viewController storyboardIdentifier="AboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="qOb-bE-B84" customClass="AboutViewController" customModule="Feedback" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="LJf-xf-ch5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3J5-Yj-PJa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="5IL-aT-NVD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="5IL-aT-NVD" firstAttribute="trailing" secondItem="3J5-Yj-PJa" secondAttribute="trailing" id="4SD-go-2ng"/>
-                            <constraint firstItem="3J5-Yj-PJa" firstAttribute="top" secondItem="LJf-xf-ch5" secondAttribute="top" id="ItM-z0-YrD"/>
-                            <constraint firstAttribute="bottom" secondItem="3J5-Yj-PJa" secondAttribute="bottom" id="MBp-vR-0Ap"/>
-                            <constraint firstItem="3J5-Yj-PJa" firstAttribute="leading" secondItem="5IL-aT-NVD" secondAttribute="leading" id="Wiv-Mg-oaw"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="webView" destination="3J5-Yj-PJa" id="CKx-pI-zN0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Z9-FV-o7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-499" y="3516"/>
+            <point key="canvasLocation" x="-581" y="2025"/>
         </scene>
         <!--Modules View Controller-->
         <scene sceneID="P18-td-GdM">
@@ -325,19 +257,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfx-Mv-q7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-499" y="4287"/>
+            <point key="canvasLocation" x="1104" y="1310"/>
         </scene>
-        <!--Modul View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="cE6-Sg-9NM">
             <objects>
-                <viewController storyboardIdentifier="ModulViewController" automaticallyAdjustsScrollViewInsets="NO" id="jzs-IG-Ifn" customClass="ModulViewController" customModule="Feedback" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" automaticallyAdjustsScrollViewInsets="NO" id="jzs-IG-Ifn" customClass="WebViewController" customModule="Feedback" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="y9q-nI-dSQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caq-rw-Z0q">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -349,8 +281,8 @@
                         <constraints>
                             <constraint firstItem="caq-rw-Z0q" firstAttribute="leading" secondItem="4uX-zB-vgg" secondAttribute="leading" id="2ea-UQ-jMb"/>
                             <constraint firstItem="4uX-zB-vgg" firstAttribute="trailing" secondItem="caq-rw-Z0q" secondAttribute="trailing" id="51h-dj-K6U"/>
-                            <constraint firstItem="caq-rw-Z0q" firstAttribute="top" secondItem="y9q-nI-dSQ" secondAttribute="top" id="aWS-uP-nIb"/>
-                            <constraint firstAttribute="bottom" secondItem="caq-rw-Z0q" secondAttribute="bottom" id="jsq-3F-GUa"/>
+                            <constraint firstItem="caq-rw-Z0q" firstAttribute="top" secondItem="4uX-zB-vgg" secondAttribute="top" id="aWS-uP-nIb"/>
+                            <constraint firstItem="4uX-zB-vgg" firstAttribute="bottom" secondItem="caq-rw-Z0q" secondAttribute="bottom" id="jsq-3F-GUa"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -361,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTB-F1-XOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="4287"/>
+            <point key="canvasLocation" x="2039" y="1310"/>
         </scene>
         <!--Dislike View Controller-->
         <scene sceneID="hid-FI-gJ8">
@@ -469,11 +401,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8GY-Hn-pBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253.62318840579712" y="2025"/>
+            <point key="canvasLocation" x="268" y="2025"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bubble.left.and.bubble.right.fill" catalog="system" width="128" height="97"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

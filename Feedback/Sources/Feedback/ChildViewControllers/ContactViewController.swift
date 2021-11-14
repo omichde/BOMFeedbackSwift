@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ContactViewController: UIViewController {
+class ContactViewController: UIViewController, ModuleNaming {
+	static var identifier: String { String(describing: self) }
+	var name: ModuleName!
 	var moduleConfig: FeedbackConfig.ContactModule?
 	var feedbackConfig: FeedbackConfig?
 
@@ -21,21 +23,16 @@ class ContactViewController: UIViewController {
 
 		title = "Contact".localized
 		tabBarItem = UITabBarItem(title: "Contact".localized, image: UIImage(systemName: "bubble.left"), selectedImage: UIImage(systemName: "bubble.left.fill"))
+		name = .contact
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let likeViewController = segue.destination as? LikeViewController {
 			likeViewController.moduleConfig = moduleConfig
-			likeViewController.feedbackConfig = feedbackConfig
 		}
 		if let dislikeViewController = segue.destination as? DislikeViewController {
 			dislikeViewController.moduleConfig = moduleConfig
 			dislikeViewController.feedbackConfig = feedbackConfig
 		}
 	}
-}
-
-extension ContactViewController: ModuleNaming {
-	var name: ModuleName { .contact }
-	static var identifier: String { String(describing: self) }
 }

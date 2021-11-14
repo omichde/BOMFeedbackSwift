@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ModulesViewController: UIViewController {
+class ModulesViewController: UIViewController, ModuleNaming {
+	static var identifier: String { String(describing: self) }
+	var name: ModuleName!
 	var modules: [String]?
 	var feedbackConfig: FeedbackConfig?
 
@@ -18,7 +20,8 @@ class ModulesViewController: UIViewController {
 		super.init(coder: coder)
 
 		title = "Modules".localized
-		tabBarItem = UITabBarItem(title: "Modules".localized, image: UIImage(systemName: "plusminus.circle"), selectedImage: UIImage(systemName: "plusminus.circle.fill"))
+		tabBarItem = UITabBarItem(title: "Modules".localized, image: UIImage(systemName: "doc.on.doc"), selectedImage: UIImage(systemName: "doc.on.doc.fill"))
+		name = .modules
 	}
 
 	override func viewDidLoad() {
@@ -49,14 +52,11 @@ extension ModulesViewController: UITableViewDelegate {
 		guard let modules = modules else { return }
 		
 		let url = URL(fileURLWithPath: modules[indexPath.row], relativeTo: Bundle.main.bundleURL)
-		if let modulViewController = storyboard?.instantiateViewController(withIdentifier: ModulViewController.identifier) as? ModulViewController {
-			modulViewController.moduleURL = url
-			navigationController?.pushViewController(modulViewController, animated: true)
+		if let webViewController = storyboard?.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
+			webViewController.title = url.lastPathComponent.removeSuffix()
+			webViewController.name = .web
+			webViewController.url = url
+			navigationController?.pushViewController(webViewController, animated: true)
 		}
 	}
-}
-
-extension ModulesViewController: ModuleNaming {
-	var name: ModuleName { .modules }
-	static var identifier: String { String(describing: self) }
 }
