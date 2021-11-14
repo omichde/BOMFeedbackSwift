@@ -19,6 +19,9 @@ class DislikeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		faqTable.tableHeaderView = UIView(frame: .zero)
+		faqTable.tableFooterView = UIView(frame: .zero)
+
 		if let config = moduleConfig {
 			faq = FAQ(filename: config.faqFile, tableView: faqTable)
 			faqTable.dataSource = faq

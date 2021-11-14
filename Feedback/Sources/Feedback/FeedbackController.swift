@@ -48,8 +48,12 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 					vc.feedbackConfig = config
 					viewController = vc
 				}
-			case let .apps(app):
-				()
+			case let .apps(url):
+				if let vc = storyboard.instantiateViewController(withIdentifier: AppsViewController.identifier) as? AppsViewController {
+					vc.urlString = url
+					vc.feedbackConfig = config
+					viewController = vc
+				}
 			case let .about(about):
 				()
 			case let .modules(modules):

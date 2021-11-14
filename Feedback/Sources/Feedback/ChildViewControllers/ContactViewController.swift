@@ -19,6 +19,7 @@ class ContactViewController: UIViewController {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 
+		title = "Contact".localized
 		tabBarItem = UITabBarItem(title: "Contact".localized, image: UIImage(systemName: "bubble.left"), selectedImage: UIImage(systemName: "bubble.left.fill"))
 	}
 	
