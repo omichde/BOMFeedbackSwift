@@ -47,7 +47,10 @@ class LikeViewController: UIViewController, ModuleNaming {
 
 		// just for the fun of it...
 		let modulePath = Bundle.module.bundleURL.lastPathComponent
-		if let starNode = SKEmitterNode(fileNamed: "\(modulePath)/FeedbackStar"), let star = UIImage(systemName: "star.fill") {
+		if let starNode = SKEmitterNode(fileNamed: "\(modulePath)/FeedbackStar"),
+			 let starIcon = UIImage(systemName: "star.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),
+			 let star = starIcon.rasterize() {
+
 			starNode.particleTexture = SKTexture(image: star)
 			starNode.position = CGPoint(x: thanksView.bounds.midX, y: thanksView.bounds.maxY * 0.3)
 			starNode.particlePositionRange = CGVector(dx: thanksView.bounds.width * 0.6, dy: 10)

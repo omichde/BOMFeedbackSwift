@@ -109,15 +109,14 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 	/// - parameters name The same name given in the configuration file.
 	public func present(name: ModuleName) {
 		guard let list = viewControllers,
-					let idx = list.firstIndex(where: { vc in
+					let navVC = list.first(where: { vc in
 			guard let navVC = vc as? UINavigationController,
 						let contentVC = navVC.viewControllers.first,
 						let moduleVC = contentVC as? ModuleNaming else { return false }
 			return moduleVC.name == name
-		})
+		}) as? UINavigationController
 		else { return }
 		
-		let navVC = list[idx] as! UINavigationController
 		navVC.popToRootViewController(animated: false)
 		selectedViewController = navVC
 	}
