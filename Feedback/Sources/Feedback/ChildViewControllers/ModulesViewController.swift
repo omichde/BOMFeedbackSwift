@@ -20,7 +20,7 @@ class ModulesViewController: UIViewController, ModuleNaming {
 		super.init(coder: coder)
 
 		title = "Modules".localized
-		tabBarItem = UITabBarItem(title: "Modules".localized, image: UIImage(systemName: "doc.on.doc"), selectedImage: UIImage(systemName: "doc.on.doc.fill"))
+		tabBarItem = UITabBarItem(title: "Modules".localized, image: UIImage(systemName: "puzzlepiece"), selectedImage: UIImage(systemName: "puzzlepiece.fill"))
 		name = .modules
 	}
 

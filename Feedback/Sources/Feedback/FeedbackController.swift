@@ -52,7 +52,7 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 			case let .apps(urlString):
 				if let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
 					vc.title = "APPs".localized
-					vc.tabBarItem = UITabBarItem(title: "APPs".localized, image: UIImage(systemName: "puzzlepiece"), selectedImage: UIImage(systemName: "puzzlepiece.fill"))
+					vc.tabBarItem = UITabBarItem(title: "APPs".localized, image: UIImage(systemName: "app.gift"), selectedImage: UIImage(systemName: "app.gift.fill"))
 					if var comp = URLComponents(string: urlString) {
 						comp.queryItems = [URLQueryItem(name: "locale", value: Locale.current.identifier),
 															 URLQueryItem(name: "src", value: Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "")]
