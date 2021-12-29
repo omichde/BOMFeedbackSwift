@@ -38,6 +38,7 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 	
 	func setup() {
 		var list = [UIViewController]()
+		let navAppearance = UINavigationBarAppearance()
 		for module in config.modules {
 			var viewController: UIViewController?
 			let storyboard = UIStoryboard(name: "Feedback", bundle: Bundle.module)
@@ -80,6 +81,8 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 
 			guard let viewController = viewController else { continue }
 			let navController = UINavigationController(rootViewController: viewController)
+			navController.navigationBar.standardAppearance = navAppearance
+			navController.navigationBar.scrollEdgeAppearance = navAppearance
 			if let navColor = config.navigationBarColor {
 				navController.navigationBar.barTintColor = UIColor(navColor)
 				navController.navigationBar.isTranslucent = false
@@ -90,6 +93,11 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 		self.viewControllers = list
 		self.selectedIndex = 0
 		self.modalPresentationStyle = .automatic
+		let tabAppearance = UITabBarAppearance()
+		self.tabBar.standardAppearance = tabAppearance
+		if #available(iOS 15.0, *) {
+			self.tabBar.scrollEdgeAppearance = tabAppearance
+		}
 	}
 	
 	///	Dismisses the Feedback Controller altogether
