@@ -60,7 +60,7 @@ extension DislikeViewController: MFMailComposeViewControllerDelegate, UINavigati
 		var text = "Report-Template".localized
 		[("LOCALE", Locale.current.identifier),
 		 ("ITMSURL", feedbackConfig?.ITMSURL ?? ""),
-		 ("APPVERSION", Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""),
+		 ("APPVERSION", Bundle.main.version),
 		 ("MODEL", UIDevice.current.localizedModel),
 		 ("SYSTEMVERSION", UIDevice.current.systemVersion)
 		].forEach { (key, value) in

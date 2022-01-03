@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  FeedbackConfig.swift
 //  
 //
 //  Created by Oliver Michalak on 24.10.21.

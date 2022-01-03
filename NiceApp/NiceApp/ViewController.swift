@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 																navigationBarColor: "#ff0000",
 																modules: [.contact(FeedbackConfig.ContactModule(email: "info@omich.de", services: [.store, .email, .twitter, .facebook], faqFile: "FeedbackFAQ.plist")),
 																					.apps("https://getallniceapps.com"),
-																					.about("FeedbackAbout.html"),
+																					.about("FeedbackAbout.md"),
 																					.modules(["Package1.rtf", "Package2.html", "Package3.pdf"])])
 		let feedbackViewController = FeedbackController(config)
 		present(feedbackViewController, animated: true)

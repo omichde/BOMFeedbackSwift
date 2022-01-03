@@ -6,7 +6,7 @@ let package = Package(
 	name: "Feedback",
 	defaultLocalization: "en",
 	platforms: [
-		.iOS(.v13)
+		.iOS("15.0")
 	],
 	products: [
 		.library(

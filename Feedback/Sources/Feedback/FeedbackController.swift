@@ -55,7 +55,7 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 					vc.tabBarItem = UITabBarItem(title: "APPs".localized, image: UIImage(systemName: "app.gift"), selectedImage: UIImage(systemName: "app.gift.fill"))
 					if var comp = URLComponents(string: urlString) {
 						comp.queryItems = [URLQueryItem(name: "locale", value: Locale.current.identifier),
-															 URLQueryItem(name: "src", value: Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "")]
+															 URLQueryItem(name: "src", value: Bundle.main.name)]
 						if let url = comp.url {
 							vc.url = url
 							vc.name = .apps
@@ -64,11 +64,11 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 					}
 				}
 			case let .about(about):
-				if let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
-					vc.title = "About".localized
-					vc.tabBarItem = UITabBarItem(title: "About".localized, image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-					vc.url = URL(fileURLWithPath: about, relativeTo: Bundle.main.bundleURL)
-					vc.name = .about
+				let aboutURL = URL(fileURLWithPath: about, relativeTo: Bundle.main.bundleURL)
+				if let aboutText = try? String(contentsOf: aboutURL) {
+					let vc = storyboard.instantiateViewController(identifier: AboutViewController.identifier) { coder in
+						AboutViewController(coder: coder, about: aboutText)
+					}
 					viewController = vc
 				}
 			case let .modules(modules):
