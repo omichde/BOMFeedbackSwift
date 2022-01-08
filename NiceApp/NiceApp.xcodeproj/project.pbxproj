@@ -16,9 +16,8 @@
 		DE6D7F0F2725F8CE00A8F382 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE6D7F0E2725F8CE00A8F382 /* Assets.xcassets */; };
 		DE6D7F122725F8CE00A8F382 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6D7F102725F8CE00A8F382 /* LaunchScreen.storyboard */; };
 		DE750D46278A0F8E00C077B8 /* FeedbackApps.md in Resources */ = {isa = PBXBuildFile; fileRef = DE750D45278A0F8E00C077B8 /* FeedbackApps.md */; };
-		DE7979892741436400F7C270 /* Package2.html in Resources */ = {isa = PBXBuildFile; fileRef = DE7979862741436400F7C270 /* Package2.html */; };
-		DE79798A2741436400F7C270 /* Package3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DE7979872741436400F7C270 /* Package3.pdf */; };
-		DE79798B2741436400F7C270 /* Package1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DE7979882741436400F7C270 /* Package1.rtf */; };
+		DE750D49278A126500C077B8 /* Package2.md in Resources */ = {isa = PBXBuildFile; fileRef = DE750D48278A126500C077B8 /* Package2.md */; };
+		DE750D4A278A136C00C077B8 /* Package1.md in Resources */ = {isa = PBXBuildFile; fileRef = DE750D47278A121C00C077B8 /* Package1.md */; };
 		DEFC25462725FDDB002D3CCF /* Feedback in Frameworks */ = {isa = PBXBuildFile; productRef = DEFC25452725FDDB002D3CCF /* Feedback */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +34,8 @@
 		DE6D7F132725F8CE00A8F382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE6D7F1D2725FD9800A8F382 /* Feedback */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Feedback; path = ../Feedback; sourceTree = "<group>"; };
 		DE750D45278A0F8E00C077B8 /* FeedbackApps.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FeedbackApps.md; sourceTree = "<group>"; };
-		DE7979862741436400F7C270 /* Package2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Package2.html; sourceTree = "<group>"; };
-		DE7979872741436400F7C270 /* Package3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Package3.pdf; sourceTree = "<group>"; };
-		DE7979882741436400F7C270 /* Package1.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Package1.rtf; sourceTree = "<group>"; };
+		DE750D47278A121C00C077B8 /* Package1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Package1.md; sourceTree = "<group>"; };
+		DE750D48278A126500C077B8 /* Package2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Package2.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +78,8 @@
 				DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */,
 				DE69490F277DE1D000BDBE7F /* FeedbackAbout.md */,
 				DE750D45278A0F8E00C077B8 /* FeedbackApps.md */,
-				DE7979882741436400F7C270 /* Package1.rtf */,
-				DE7979862741436400F7C270 /* Package2.html */,
-				DE7979872741436400F7C270 /* Package3.pdf */,
+				DE750D47278A121C00C077B8 /* Package1.md */,
+				DE750D48278A126500C077B8 /* Package2.md */,
 				DE6D7F0E2725F8CE00A8F382 /* Assets.xcassets */,
 				DE6D7F102725F8CE00A8F382 /* LaunchScreen.storyboard */,
 				DE6D7F132725F8CE00A8F382 /* Info.plist */,
@@ -158,15 +155,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE7979892741436400F7C270 /* Package2.html in Resources */,
 				DE750D46278A0F8E00C077B8 /* FeedbackApps.md in Resources */,
 				DE694910277DE1D000BDBE7F /* FeedbackAbout.md in Resources */,
+				DE750D49278A126500C077B8 /* Package2.md in Resources */,
 				DE2FC81E27405EC20046D3AE /* FeedbackFAQ.plist in Resources */,
 				DE6D7F122725F8CE00A8F382 /* LaunchScreen.storyboard in Resources */,
-				DE79798B2741436400F7C270 /* Package1.rtf in Resources */,
 				DE6D7F0F2725F8CE00A8F382 /* Assets.xcassets in Resources */,
-				DE79798A2741436400F7C270 /* Package3.pdf in Resources */,
 				DE6D7F0D2725F8CA00A8F382 /* Main.storyboard in Resources */,
+				DE750D4A278A136C00C077B8 /* Package1.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ModulesViewController: UIViewController, ModuleNaming {
 	static var identifier: String { String(describing: self) }
@@ -50,13 +51,14 @@ extension ModulesViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		guard let modules = modules else { return }
-		
-		let url = URL(fileURLWithPath: modules[indexPath.row], relativeTo: Bundle.main.bundleURL)
-		if let webViewController = storyboard?.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
-			webViewController.title = url.lastPathComponent.removeSuffix()
-			webViewController.name = .web
-			webViewController.url = url
-			navigationController?.pushViewController(webViewController, animated: true)
+
+		let name = modules[indexPath.row]
+		if let url = feedbackConfig?.localURL(name), let text = try? String(contentsOf: url),
+			 let vc = storyboard?.instantiateViewController(withIdentifier: HostViewController.identifier) as? HostViewController {
+			vc.title = name.removeSuffix()
+			vc.name = .module
+			vc.contentView = AnyView(MarkdownView(model: MarkdownViewModel(text)))
+			navigationController?.pushViewController(vc, animated: true)
 		}
 	}
 }

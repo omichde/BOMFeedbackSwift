@@ -19,9 +19,9 @@ class ViewController: UIViewController {
 																ITMSURL: "https://itunes.apple.com/de/app/id12345678?mt=8",
 																navigationBarColor: "#ff0000",
 																modules: [.contact(FeedbackConfig.ContactModule(email: "info@omich.de", services: [.store, .email, .twitter, .facebook], faqFile: "FeedbackFAQ.plist")),
-																					.apps("FeedbackApps.md"), // https://getallniceapps.com"),
 																					.about("FeedbackAbout.md"),
-																					.modules(["Package1.rtf", "Package2.html", "Package3.pdf"])])
+																					.apps("FeedbackApps.md"), // https://getallniceapps.com"),
+																					.modules(["Package1.md", "Package2.md"])])
 		config.update()
 	}
 
