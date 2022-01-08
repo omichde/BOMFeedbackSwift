@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITabBarControllerDelegate {
 
@@ -49,26 +50,26 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 					vc.feedbackConfig = config
 					viewController = vc
 				}
-			case let .apps(urlString):
-				if let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
+			case let .apps(link):
+				if let url = config.localURL(link), let text = try? String(contentsOf: url),
+					 let vc = storyboard.instantiateViewController(withIdentifier: HostViewController.identifier) as? HostViewController {
 					vc.title = "APPs".localized
 					vc.tabBarItem = UITabBarItem(title: "APPs".localized, image: UIImage(systemName: "app.gift"), selectedImage: UIImage(systemName: "app.gift.fill"))
-					if var comp = URLComponents(string: urlString) {
-						comp.queryItems = [URLQueryItem(name: "locale", value: Locale.current.identifier),
-															 URLQueryItem(name: "src", value: Bundle.main.name)]
-						if let url = comp.url {
-							vc.url = url
-							vc.name = .apps
-							viewController = vc
-						}
-					}
+					vc.name = .apps
+					vc.contentView = AnyView(MarkdownView(model: MarkdownViewModel(text)))
+					viewController = vc
 				}
-			case let .about(about):
-				let aboutURL = URL(fileURLWithPath: about, relativeTo: Bundle.main.bundleURL)
-				if let aboutText = try? String(contentsOf: aboutURL) {
-					let vc = storyboard.instantiateViewController(identifier: AboutViewController.identifier) { coder in
-						AboutViewController(coder: coder, about: aboutText)
-					}
+			case let .about(link):
+				if let url = config.localURL(link), let aboutText = try? String(contentsOf: url),
+					 let vc = storyboard.instantiateViewController(withIdentifier: HostViewController.identifier) as? HostViewController {
+					vc.title = "About".localized
+					vc.tabBarItem = UITabBarItem(title: "About".localized, image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+					vc.name = .about
+					vc.contentView = AnyView(AboutView(model: AboutViewModel(icon: Bundle.main.icon ?? UIImage(),
+																																	 name: Bundle.main.name,
+																																	 version: Bundle.main.version,
+																																	 build: Bundle.main.build,
+																																	 text: aboutText)))
 					viewController = vc
 				}
 			case let .modules(modules):

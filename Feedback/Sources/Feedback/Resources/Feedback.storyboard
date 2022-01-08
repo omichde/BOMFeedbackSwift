@@ -294,10 +294,10 @@
             </objects>
             <point key="canvasLocation" x="2039" y="1310"/>
         </scene>
-        <!--About View Controller-->
+        <!--Host View Controller-->
         <scene sceneID="X1E-FI-9NE">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="ezZ-wB-2W8" customClass="AboutViewController" customModule="Feedback" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostViewController" automaticallyAdjustsScrollViewInsets="NO" id="ezZ-wB-2W8" customClass="HostViewController" customModule="Feedback" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sSP-JS-0WL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
