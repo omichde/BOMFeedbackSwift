@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DE2FC81E27405EC20046D3AE /* FeedbackFAQ.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */; };
+		DE5711942822E0E8006F9D40 /* SubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5711932822E0E8006F9D40 /* SubViewController.xib */; };
+		DE5711962822E10D006F9D40 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5711952822E10D006F9D40 /* SubViewController.swift */; };
 		DE694910277DE1D000BDBE7F /* FeedbackAbout.md in Resources */ = {isa = PBXBuildFile; fileRef = DE69490F277DE1D000BDBE7F /* FeedbackAbout.md */; };
 		DE6D7F062725F8CA00A8F382 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D7F052725F8CA00A8F382 /* AppDelegate.swift */; };
 		DE6D7F082725F8CA00A8F382 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D7F072725F8CA00A8F382 /* SceneDelegate.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeedbackFAQ.plist; sourceTree = "<group>"; };
+		DE5711932822E0E8006F9D40 /* SubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubViewController.xib; sourceTree = "<group>"; };
+		DE5711952822E10D006F9D40 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		DE69490F277DE1D000BDBE7F /* FeedbackAbout.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FeedbackAbout.md; sourceTree = "<group>"; };
 		DE6D7F022725F8CA00A8F382 /* NiceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6D7F052725F8CA00A8F382 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				DE6D7F072725F8CA00A8F382 /* SceneDelegate.swift */,
 				DE6D7F092725F8CA00A8F382 /* ViewController.swift */,
 				DE6D7F0B2725F8CA00A8F382 /* Main.storyboard */,
+				DE5711952822E10D006F9D40 /* SubViewController.swift */,
+				DE5711932822E0E8006F9D40 /* SubViewController.xib */,
 				DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */,
 				DE69490F277DE1D000BDBE7F /* FeedbackAbout.md */,
 				DE750D45278A0F8E00C077B8 /* FeedbackApps.md */,
@@ -162,6 +168,7 @@
 				DE6D7F122725F8CE00A8F382 /* LaunchScreen.storyboard in Resources */,
 				DE6D7F0F2725F8CE00A8F382 /* Assets.xcassets in Resources */,
 				DE6D7F0D2725F8CA00A8F382 /* Main.storyboard in Resources */,
+				DE5711942822E0E8006F9D40 /* SubViewController.xib in Resources */,
 				DE750D4A278A136C00C077B8 /* Package1.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +183,7 @@
 				DE6D7F0A2725F8CA00A8F382 /* ViewController.swift in Sources */,
 				DE6D7F062725F8CA00A8F382 /* AppDelegate.swift in Sources */,
 				DE6D7F082725F8CA00A8F382 /* SceneDelegate.swift in Sources */,
+				DE5711962822E10D006F9D40 /* SubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -102,7 +102,7 @@ public class FeedbackController: UITabBarController, UITabBarControllerDelegate 
 	}
 	
 	///	Dismisses the Feedback Controller altogether
-	@objc func close() {
+	@objc public func close() {
 		dismiss(animated: true, completion: nil)
 	}
 

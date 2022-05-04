@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension Bundle {
+
 	var name: String {
 		infoDictionary?[kCFBundleNameKey as String] as? String ?? ""
 	}
@@ -34,4 +35,5 @@ extension Bundle {
 
 		return nil
 	}
+
 }

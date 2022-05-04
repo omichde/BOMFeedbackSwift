@@ -27,6 +27,16 @@ class ContactViewController: UIViewController, ModuleNaming {
 		name = .contact
 	}
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		if let submodule = moduleConfig?.submodule,
+			 let clazz = NSClassFromString("\(Bundle.main.name).\(submodule)") as? UIViewController.Type {
+			let viewController = clazz.init()
+			embedChild(viewController, container: containerView)
+		}
+	}
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let likeViewController = segue.destination as? LikeViewController {
 			likeViewController.moduleConfig = moduleConfig
