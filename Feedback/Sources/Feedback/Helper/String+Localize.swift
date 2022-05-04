@@ -8,7 +8,9 @@
 import Foundation
 
 extension String {
+
 	var localized: String {
 		Bundle.module.localizedString(forKey: self, value: nil, table: "FeedbackLocalizable")
 	}
+
 }

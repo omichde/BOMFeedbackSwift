@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct MarkdownViewModel {
+
 	let texts: [AttributedString]
 	
 	init(_ text: String) {
 		self.texts = text.components(separatedBy: "\n\n").compactMap { try? AttributedString(markdown: $0) }
 	}
+
 }
 
+
 struct MarkdownView: View {
+
 	let model: MarkdownViewModel
 
 	var body: some View {
@@ -36,7 +40,9 @@ struct MarkdownView: View {
 		}
 		.padding([.leading, .trailing, .top], 10)
 	}
+	
 }
+
 
 struct MarkdownView_Previews: PreviewProvider {
 		static var previews: some View {

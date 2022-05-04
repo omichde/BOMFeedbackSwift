@@ -43,5 +43,6 @@ extension UIViewController {
 	private func childViewControllerOf(_ view: UIView) -> UIViewController? {
 		return children.filter({ $0.view.superview == view }).first
 	}
+
 }
 

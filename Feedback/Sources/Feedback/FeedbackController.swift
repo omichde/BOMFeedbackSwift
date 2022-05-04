@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITabBarControllerDelegate {
+public class FeedbackController: UITabBarController, UITabBarControllerDelegate {
 
 	let config: FeedbackConfig
 
@@ -121,4 +121,5 @@ public class FeedbackController: UITabBarController, /* UITabBarDelegate,*/ UITa
 		navVC.popToRootViewController(animated: false)
 		selectedViewController = navVC
 	}
+
 }

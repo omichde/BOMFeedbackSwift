@@ -8,11 +8,15 @@
 import Foundation
 
 protocol ModuleNaming {
+
 	static var identifier: String { get }
 	var name: ModuleName! { get set }
+
 }
 
+
 public enum ModuleName: String, CaseIterable {
+
 	case contact
 	case like
 	case dislike
@@ -20,4 +24,5 @@ public enum ModuleName: String, CaseIterable {
 	case about
 	case modules
 	case module
+
 }

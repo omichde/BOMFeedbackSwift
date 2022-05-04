@@ -8,6 +8,7 @@
 import Foundation
 
 public struct FeedbackConfig: Decodable {
+
 	public struct ContactModule: Decodable {
 		public enum ContactType: Decodable {
 			case store, email, twitter, facebook
@@ -43,4 +44,5 @@ public struct FeedbackConfig: Decodable {
 		self.navigationBarColor = navigationBarColor
 		self.modules = modules
 	}
+
 }

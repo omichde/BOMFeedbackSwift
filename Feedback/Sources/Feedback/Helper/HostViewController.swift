@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 class HostViewController: UIViewController, ModuleNaming {
+
 	static var identifier: String { String(describing: self) }
 	var name: ModuleName!
 	var contentView: AnyView?
@@ -22,4 +23,5 @@ class HostViewController: UIViewController, ModuleNaming {
 			embed(contentView, container: container)
 		}
 	}
+
 }

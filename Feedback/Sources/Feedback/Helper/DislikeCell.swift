@@ -8,6 +8,7 @@
 import UIKit
 
 class DislikeCell: UITableViewCell {
+
 	static var identifier: String {
 		String(describing: self)
 	}
@@ -23,4 +24,5 @@ class DislikeCell: UITableViewCell {
 			answerLabel.isHidden = !(item.isSelected ?? false)
 		}
 	}
+
 }

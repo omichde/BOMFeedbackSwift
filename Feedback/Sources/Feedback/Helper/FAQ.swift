@@ -8,6 +8,7 @@
 import UIKit
 
 class FAQ: UITableViewDiffableDataSource<Int, FAQItem> {
+
 	var list: [FAQItem]
 	
 	init(filename: String? = nil, tableView: UITableView) {
@@ -55,9 +56,12 @@ class FAQ: UITableViewDiffableDataSource<Int, FAQItem> {
 		snap.reloadSections([0])
 		apply(snap, animatingDifferences: true)
 	}
+
 }
 
+
 struct FAQItem: Decodable, Hashable {
+
 	let question: String
 	let answer: String
 	let isSelected: Bool?
@@ -65,4 +69,5 @@ struct FAQItem: Decodable, Hashable {
 	func with(isSelected: Bool) -> FAQItem {
 		FAQItem(question: question, answer: answer, isSelected: isSelected)
 	}
+
 }

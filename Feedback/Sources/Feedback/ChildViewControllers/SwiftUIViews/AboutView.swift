@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AboutViewModel {
+
 	let icon: UIImage
 	let name: String
 	let version: String
@@ -15,16 +16,18 @@ struct AboutViewModel {
 	let texts: [AttributedString]
 	
 	init(icon: UIImage, name: String, version: String, build: String, text: String) {
-		
 		self.icon = icon
 		self.name = name
 		self.version = version
 		self.build = build
 		self.texts = text.components(separatedBy: "\n\n").compactMap { try? AttributedString(markdown: $0) }
 	}
+
 }
 
+
 struct AboutView: View {
+
 	let model: AboutViewModel
 
 	var body: some View {
@@ -73,7 +76,9 @@ struct AboutView: View {
 		}
 		.padding([.leading, .trailing, .top], 10)
 	}
+
 }
+
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {

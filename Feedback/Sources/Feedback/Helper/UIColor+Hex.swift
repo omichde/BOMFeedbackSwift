@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIColor {
+
 	convenience init?(_ text: String) {
 		var code = text
 		if code.hasPrefix("#") {
@@ -43,4 +44,5 @@ extension UIColor {
 			self.init(red: vals[0], green: vals[1], blue: vals[2], alpha: 1)
 		}
 	}
+
 }

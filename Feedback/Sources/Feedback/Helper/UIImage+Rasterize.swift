@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIImage {
+
 	func rasterize() -> UIImage? {
 		let size = CGSize(width: size.width, height: size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -16,4 +17,5 @@ extension UIImage {
 		UIGraphicsEndImageContext()
 		return result
 	}
+
 }

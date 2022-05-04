@@ -8,6 +8,7 @@
 import UIKit
 
 class ContactViewController: UIViewController, ModuleNaming {
+
 	static var identifier: String { String(describing: self) }
 	var name: ModuleName!
 	var moduleConfig: FeedbackConfig.ContactModule?
@@ -35,4 +36,5 @@ class ContactViewController: UIViewController, ModuleNaming {
 			dislikeViewController.feedbackConfig = feedbackConfig
 		}
 	}
+
 }

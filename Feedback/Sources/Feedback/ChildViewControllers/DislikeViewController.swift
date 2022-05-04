@@ -9,6 +9,7 @@ import UIKit
 import MessageUI
 
 class DislikeViewController: UIViewController, ModuleNaming {
+
 	static var identifier: String { String(describing: self) }
 	var name: ModuleName!
 	var feedbackConfig: FeedbackConfig?
@@ -45,7 +46,9 @@ class DislikeViewController: UIViewController, ModuleNaming {
 			faq = FAQ(tableView: faqTable)
 		}
 	}
+
 }
+
 
 extension DislikeViewController: MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
 
@@ -74,10 +77,14 @@ extension DislikeViewController: MFMailComposeViewControllerDelegate, UINavigati
 	func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
 		controller.dismiss(animated: true)
 	}
+
 }
 
+
 extension DislikeViewController: UITableViewDelegate {
+
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		faq.toggle(indexPath)
 	}
+
 }
