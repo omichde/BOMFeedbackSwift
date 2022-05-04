@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE2FC81E27405EC20046D3AE /* FeedbackFAQ.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2FC81D27405E580046D3AE /* FeedbackFAQ.plist */; };
+		DE450D3B282315A4001C77E5 /* Feedback in Frameworks */ = {isa = PBXBuildFile; productRef = DE450D3A282315A4001C77E5 /* Feedback */; };
 		DE5711942822E0E8006F9D40 /* SubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5711932822E0E8006F9D40 /* SubViewController.xib */; };
 		DE5711962822E10D006F9D40 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5711952822E10D006F9D40 /* SubViewController.swift */; };
 		DE694910277DE1D000BDBE7F /* FeedbackAbout.md in Resources */ = {isa = PBXBuildFile; fileRef = DE69490F277DE1D000BDBE7F /* FeedbackAbout.md */; };
@@ -47,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFC25462725FDDB002D3CCF /* Feedback in Frameworks */,
+				DE450D3B282315A4001C77E5 /* Feedback in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +118,7 @@
 			name = NiceApp;
 			packageProductDependencies = (
 				DEFC25452725FDDB002D3CCF /* Feedback */,
+				DE450D3A282315A4001C77E5 /* Feedback */,
 			);
 			productName = NiceApp;
 			productReference = DE6D7F022725F8CA00A8F382 /* NiceApp.app */;
@@ -146,6 +149,7 @@
 			);
 			mainGroup = DE6D7EF92725F8CA00A8F382;
 			packageReferences = (
+				DE450D39282315A4001C77E5 /* XCRemoteSwiftPackageReference "BOMFeedbackSwift" */,
 			);
 			productRefGroup = DE6D7F032725F8CA00A8F382 /* Products */;
 			projectDirPath = "";
@@ -406,7 +410,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		DE450D39282315A4001C77E5 /* XCRemoteSwiftPackageReference "BOMFeedbackSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/omichde/BOMFeedbackSwift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		DE450D3A282315A4001C77E5 /* Feedback */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE450D39282315A4001C77E5 /* XCRemoteSwiftPackageReference "BOMFeedbackSwift" */;
+			productName = Feedback;
+		};
 		DEFC25452725FDDB002D3CCF /* Feedback */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Feedback;
