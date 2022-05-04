@@ -36,7 +36,6 @@
 		DE6D7F0E2725F8CE00A8F382 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE6D7F112725F8CE00A8F382 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE6D7F132725F8CE00A8F382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE6D7F1D2725FD9800A8F382 /* Feedback */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Feedback; path = ../Feedback; sourceTree = "<group>"; };
 		DE750D45278A0F8E00C077B8 /* FeedbackApps.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FeedbackApps.md; sourceTree = "<group>"; };
 		DE750D47278A121C00C077B8 /* Package1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Package1.md; sourceTree = "<group>"; };
 		DE750D48278A126500C077B8 /* Package2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Package2.md; sourceTree = "<group>"; };
@@ -57,7 +56,6 @@
 		DE6D7EF92725F8CA00A8F382 = {
 			isa = PBXGroup;
 			children = (
-				DE6D7F1D2725FD9800A8F382 /* Feedback */,
 				DE6D7F042725F8CA00A8F382 /* NiceApp */,
 				DE6D7F032725F8CA00A8F382 /* Products */,
 				DEFC25442725FDDB002D3CCF /* Frameworks */,
@@ -147,6 +145,8 @@
 				Base,
 			);
 			mainGroup = DE6D7EF92725F8CA00A8F382;
+			packageReferences = (
+			);
 			productRefGroup = DE6D7F032725F8CA00A8F382 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
