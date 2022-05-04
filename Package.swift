@@ -13,11 +13,10 @@ let package = Package(
 			name: "Feedback",
 			targets: ["Feedback"]),
 	],
-	dependencies: [
-	],
+	dependencies: [],
 	targets: [
 		.target(name: "Feedback",
-		exclude: ["NiceApp"],
+						path: "Feedback",
 						resources: [
 							.copy("Resources/Feedback-Regular.otf"),
 							.copy("Resources/FeedbackStar.sks")
