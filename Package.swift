@@ -16,9 +16,8 @@ let package = Package(
 	dependencies: [],
 	targets: [
 		.target(name: "Feedback",
-		exclude: ["../NiceApp", "../README.md", "Icon.sketch"],
+						exclude: ["NiceApp", "README.md", "Icon.sketch"],
 						resources: [
-							.copy("Resources/Feedback-Regular.otf"),
 							.copy("Resources/FeedbackStar.sks")
 						])
 	]
