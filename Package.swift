@@ -16,7 +16,6 @@ let package = Package(
 	dependencies: [],
 	targets: [
 		.target(name: "Feedback",
-						path: "Feedback",
 						resources: [
 							.copy("Resources/Feedback-Regular.otf"),
 							.copy("Resources/FeedbackStar.sks")
