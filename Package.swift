@@ -17,7 +17,7 @@ let package = Package(
 	],
 	targets: [
 		.target(name: "Feedback",
-		path: "Feedback/Sources/Feedback",
+		exclude: ["NiceApp"],
 						resources: [
 							.copy("Resources/Feedback-Regular.otf"),
 							.copy("Resources/FeedbackStar.sks")
