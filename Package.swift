@@ -9,9 +9,7 @@ let package = Package(
 		.iOS("15.0")
 	],
 	products: [
-		.library(
-			name: "Feedback",
-			targets: ["Feedback"]),
+		.library(name: "Feedback", targets: ["Feedback"]),
 	],
 	dependencies: [],
 	targets: [
