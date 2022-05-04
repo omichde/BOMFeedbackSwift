@@ -69,7 +69,9 @@ class LikeViewController: UIViewController, ModuleNaming {
 
 extension LikeViewController {
 	@IBAction func rate() {
-		SKStoreReviewController.requestReview()
+		guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+
+		SKStoreReviewController.requestReview(in: scene)
 	}
 
 	@IBAction func twitter() {
