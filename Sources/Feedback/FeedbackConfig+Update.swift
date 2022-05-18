@@ -30,7 +30,7 @@ extension FeedbackConfig {
 			return localURL
 		}
 		else {
-			let url = URL(fileURLWithPath: name, relativeTo: Bundle.main.bundleURL)
+			let url = Bundle.main.bundleURL.appendingPathComponent(name)
 			if fm.fileExists(atPath: url.path) {
 				return url
 			}
