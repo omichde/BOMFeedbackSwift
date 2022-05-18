@@ -296,6 +296,37 @@
             </objects>
             <point key="canvasLocation" x="2077" y="1310"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="MgU-YN-WCN">
+            <objects>
+                <viewController id="A2M-e6-has" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jp7-1N-TEU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-pL-eca">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fhz-wo-WYg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ko1-pL-eca" firstAttribute="top" secondItem="fhz-wo-WYg" secondAttribute="top" id="0z6-dC-zof"/>
+                            <constraint firstItem="fhz-wo-WYg" firstAttribute="trailing" secondItem="ko1-pL-eca" secondAttribute="trailing" id="Fbm-fS-H5R"/>
+                            <constraint firstItem="fhz-wo-WYg" firstAttribute="bottom" secondItem="ko1-pL-eca" secondAttribute="bottom" id="PXX-v8-EVf"/>
+                            <constraint firstItem="ko1-pL-eca" firstAttribute="leading" secondItem="fhz-wo-WYg" secondAttribute="leading" id="XS2-Ma-eb1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m48-iB-x80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3056.521739130435" y="1309.8214285714284"/>
+        </scene>
         <!--Dislike View Controller-->
         <scene sceneID="hid-FI-gJ8">
             <objects>

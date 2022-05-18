@@ -23,7 +23,8 @@ class ViewController: UIViewController {
 																																						faqFile: "FeedbackFAQ.plist",
 																																						submodule: "SubViewController")),
 																			.about("FeedbackAbout.md"),
-																			.apps("FeedbackApps.md"), // https://getallniceapps.com"),
+//																			.apps("FeedbackApps.md"),
+																			.apps("https://getallniceapps.com"),
 																			.modules(["Package1.md", "Package2.md"])])
 		config.update()
 	}

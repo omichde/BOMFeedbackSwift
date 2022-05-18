@@ -51,26 +51,44 @@ public class FeedbackController: UITabBarController, UITabBarControllerDelegate 
 					viewController = vc
 				}
 			case let .apps(link):
-				if let url = config.localURL(link), let text = try? String(contentsOf: url),
-					 let vc = storyboard.instantiateViewController(withIdentifier: HostViewController.identifier) as? HostViewController {
-					vc.title = "APPs".localized
-					vc.tabBarItem = UITabBarItem(title: "APPs".localized, image: UIImage(systemName: "app.gift"), selectedImage: UIImage(systemName: "app.gift.fill"))
+				if let url = config.remoteURL(link),
+					 let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
+					vc.url = url
 					vc.name = .apps
-					vc.contentView = AnyView(MarkdownView(model: MarkdownViewModel(text)))
 					viewController = vc
 				}
+				else if let url = config.localURL(link),
+								let text = try? String(contentsOf: url),
+								let vc = storyboard.instantiateViewController(withIdentifier: HostViewController.identifier) as? HostViewController {
+					vc.contentView = AnyView(MarkdownView(model: MarkdownViewModel(text)))
+					vc.name = .apps
+					viewController = vc
+				}
+				if let vc = viewController {
+					vc.title = "APPs".localized
+					vc.tabBarItem = UITabBarItem(title: "APPs".localized, image: UIImage(systemName: "app.gift"), selectedImage: UIImage(systemName: "app.gift.fill"))
+				}
 			case let .about(link):
-				if let url = config.localURL(link), let aboutText = try? String(contentsOf: url),
-					 let vc = storyboard.instantiateViewController(withIdentifier: HostViewController.identifier) as? HostViewController {
-					vc.title = "About".localized
-					vc.tabBarItem = UITabBarItem(title: "About".localized, image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+				if let url = config.remoteURL(link),
+					 let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController {
+					vc.url = url
 					vc.name = .about
+					viewController = vc
+				}
+				else if let url = config.localURL(link),
+								let aboutText = try? String(contentsOf: url),
+								let vc = storyboard.instantiateViewController(withIdentifier: HostViewController.identifier) as? HostViewController {
 					vc.contentView = AnyView(AboutView(model: AboutViewModel(icon: Bundle.main.icon ?? UIImage(),
 																																	 name: Bundle.main.name,
 																																	 version: Bundle.main.version,
 																																	 build: Bundle.main.build,
 																																	 text: aboutText)))
+					vc.name = .about
 					viewController = vc
+				}
+				if let vc = viewController {
+					vc.title = "About".localized
+					vc.tabBarItem = UITabBarItem(title: "About".localized, image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
 				}
 			case let .modules(modules):
 				if let vc = storyboard.instantiateViewController(withIdentifier: ModulesViewController.identifier) as? ModulesViewController {
