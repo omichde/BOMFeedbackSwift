@@ -296,10 +296,10 @@
             </objects>
             <point key="canvasLocation" x="2077" y="1310"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="MgU-YN-WCN">
             <objects>
-                <viewController id="A2M-e6-has" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="A2M-e6-has" customClass="WebViewController" customModule="Feedback" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jp7-1N-TEU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,6 +322,9 @@
                             <constraint firstItem="ko1-pL-eca" firstAttribute="leading" secondItem="fhz-wo-WYg" secondAttribute="leading" id="XS2-Ma-eb1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="ko1-pL-eca" id="3VG-T7-loW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m48-iB-x80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
