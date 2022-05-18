@@ -13,7 +13,7 @@ class FAQ: UITableViewDiffableDataSource<Int, FAQItem> {
 	
 	init(filename: String? = nil, tableView: UITableView) {
 		guard let filename = filename,
-					case let file = Bundle.main.bundleURL.appendingPathComponent(filename),
+					case let file = Bundle.main.url(forResource: filename, withExtension: nil),
 					let data = try? Data(contentsOf: file)
 		else {
 			self.list = []
