@@ -30,8 +30,8 @@ extension FeedbackConfig {
 			return localURL
 		}
 		else {
-			let url = Bundle.main.bundleURL.appendingPathComponent(name)
-			if fm.fileExists(atPath: url.path) {
+			if let url = Bundle.main.url(forResource: name, withExtension: nil),
+				 fm.fileExists(atPath: url.path) {
 				return url
 			}
 		}
